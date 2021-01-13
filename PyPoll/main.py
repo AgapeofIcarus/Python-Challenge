@@ -40,10 +40,10 @@ print("Election Results")
 print("--------------------------------")
 print("Total Votes")
 print("--------------------------------")
-
-
-
-
+print(f"{votes_per[0][0][0]}: {candidate_one}% ({votes_per[0][0][1]})")
+print(f"{votes_per[0][1][0]}: {candidate_two}% ({votes_per[0][1][1]})")
+print(f"{votes_per[0][2][0]}: {candidate_three}% ({votes_per[0][2][1]})")
+print(f"{votes_per[0][3][0]}: {candidate_four}% ({votes_per[0][3][1]})")
 print("--------------------------------")
-print("Winner")
+print(f"Winner:  {votes_per[0][0][0]}")
 print("--------------------------------")
