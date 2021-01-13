@@ -24,8 +24,12 @@ with open(election_data_csv_path, newline="") as csvfile:
     arrange_list = sorted_list
 
     #count candidates using counter
-    count_candidates= collections.Counter(arrange_list)
-    votes_per.append(count_candidates.most_common())
+    total_candidates= collections.Counter(arrange_list)
+    votes_per.append(total_candidates.most_common())
 
     #generate percentage of votes for each candidate
     for item in votes_per:
+        candidate_one = format((item[0][1])*100/(sum(total_candidates.values())),'.3f')
+        candidate_two = format((item[1][1])*100/(sum(total_candidates.values())),'.3f')
+        candidate_three = format((item[2][1])*100/(sum(total_candidates.values())),'.3f')
+        candidate_four = format((item[3][1])*100/(sum(total_candidates.values())),'.3f')
