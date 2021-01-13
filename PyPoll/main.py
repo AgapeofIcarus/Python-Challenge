@@ -33,3 +33,17 @@ with open(election_data_csv_path, newline="") as csvfile:
         candidate_two = format((item[1][1])*100/(sum(total_candidates.values())),'.3f')
         candidate_three = format((item[2][1])*100/(sum(total_candidates.values())),'.3f')
         candidate_four = format((item[3][1])*100/(sum(total_candidates.values())),'.3f')
+
+#Print the analysis for the terminal
+
+print("Election Results")
+print("--------------------------------")
+print("Total Votes")
+print("--------------------------------")
+
+
+
+
+print("--------------------------------")
+print("Winner")
+print("--------------------------------")
