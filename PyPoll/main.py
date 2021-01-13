@@ -47,3 +47,18 @@ print(f"{votes_per[0][3][0]}: {candidate_four}% ({votes_per[0][3][1]})")
 print("--------------------------------")
 print(f"Winner:  {votes_per[0][0][0]}")
 print("--------------------------------")
+
+#export results as a text file
+election_results = os.path.join("Analysis", "election_results.txt")
+with open(election_results, "w") as outfile:
+    outfile.write("Election Results\n")
+    outfile.write("--------------------------------\n")
+    outfile.write("Total Votes\n")
+    outfile.write("--------------------------------\n")
+    outfile.write(f"{votes_per[0][0][0]}: {candidate_one}% ({votes_per[0][0][1]})\n")
+    outfile.write(f"{votes_per[0][1][0]}: {candidate_two}% ({votes_per[0][1][1]})\n")
+    outfile.write(f"{votes_per[0][2][0]}: {candidate_three}% ({votes_per[0][2][1]})\n")
+    outfile.write(f"{votes_per[0][3][0]}: {candidate_four}% ({votes_per[0][3][1]})\n")
+    outfile.write("--------------------------------\n")
+    outfile.write(f"Winner:  {votes_per[0][0][0]}\n")
+    outfile.write("--------------------------------\n")
