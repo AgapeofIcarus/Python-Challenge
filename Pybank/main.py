@@ -2,7 +2,8 @@
 import os
 import csv
 
-csvpath = os.path.join('..', '..', 'Homework', 'python-challenge', 'budget_data.csv')
+os.chdir(os.path.dirname(__file__))
+csvpath = os.path.join('Resources', 'budget_data.csv')
 
 #Set Definitions
 total_months = []
@@ -69,3 +70,15 @@ with open(csvpath) as csvfile:
     print(f"Average Change: ${profit_changes_average}")
     print(f"Greatest Increase In Profits: {month_maximum_increase} ${profit_increase}")
     print(f"Greatest Decrease In Losses: {month_maximum_decrease} ${loss_decrease}")
+
+    #export a text file with the findings of the analysis
+budget_analysis = os.path.join("Analysis", "budget_analysis.txt")
+with open(budget_analysis, "w") as outfile:
+
+    outfile.write("Financial Analysis\n")
+    outfile.write("----------------------------\n")
+    outfile.write(f"Total Months:  {count_months}\n")
+    outfile.write(f"Total:  ${total_profits_losses}\n")
+    outfile.write(f"Average Change:  ${profit_changes_average}\n")
+    outfile.write(f"Greatest Increase in Profits:  {month_maximum_increase} (${profit_increase})\n")
+    outfile.write(f"Greatest Decrease in Losses:  {month_maximum_decrease} (${loss_decrease})\n")
